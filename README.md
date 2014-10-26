@@ -23,7 +23,8 @@ public class WhatsTheTechDebt
 ```	
 	
 Run the test and get the report:	
-	
+
+```	
 Start of Tech Debt Report - finding all [TechDebt] attribute usages
 Benefit to fix: 1666.7  Void .ctor() Pain:5000 Effort to fix:3
 Benefit to fix: 5 Quick fix to stop stupid stuff happening sometimes Void SomeMethod() Pain:5 Effort to fix:1
@@ -33,3 +34,4 @@ Benefit to fix: 0.2 This is dumb, we should remove it ExampleUsage.ISomeDumbInte
 Benefit to fix: 0.1 This should be moved to it's own interface Void Y() Pain:10 Effort to fix:100
 Benefit to fix: 0 There's a lot of work to fix this whole class for not much gain ExampleUsage.SomeThing Pain:1 Effort to fix:200
 End of Tech Debt Report.
+```
