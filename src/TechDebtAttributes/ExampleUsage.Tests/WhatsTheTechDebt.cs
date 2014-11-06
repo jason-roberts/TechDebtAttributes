@@ -10,9 +10,11 @@ namespace ExampleUsage.Tests
         [Fact]
         public void CalcTechDebt()
         {
-            var assemblyToReportOn = Assembly.GetAssembly(typeof (SomeThing));
+            var assemblyContainingTechDebt = Assembly.GetAssembly(typeof (SomeThing));
 
-            Console.WriteLine(assemblyToReportOn.CalculateTechDebtFor());
+            var report = TechDebtReporter.GenerateReport(assemblyContainingTechDebt);
+
+            Console.WriteLine(report);
         }
     }
 }

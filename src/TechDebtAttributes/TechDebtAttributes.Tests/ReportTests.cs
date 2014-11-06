@@ -1,5 +1,4 @@
-﻿using System;
-using System.Reflection;
+﻿using System.Reflection;
 using ApprovalTests;
 using ApprovalTests.Reporters;
 using ExampleUsage;
@@ -15,7 +14,7 @@ namespace TechDebtAttributes.Tests
         {
             var assemblyToReportOn = Assembly.GetAssembly(typeof(SomeThing));
 
-            Approvals.Verify(assemblyToReportOn.CalculateTechDebtFor());
+            Approvals.Verify(TechDebtReporter.GenerateReport(assemblyToReportOn));
         }
     }
 }

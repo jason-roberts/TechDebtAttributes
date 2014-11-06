@@ -6,9 +6,9 @@ using System.Text;
 
 namespace TechDebtAttributes
 {
-    public static class AssemblyExtensions
+    public static class TechDebtReporter
     {
-        public static string CalculateTechDebtFor(this Assembly assembly)
+        public static string GenerateReport(Assembly assembly)
         {
             var types = assembly.GetTypes()
                 .SelectMany(type => type.GetMembers())

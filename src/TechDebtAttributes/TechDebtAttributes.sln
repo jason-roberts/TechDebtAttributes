@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleUsage.Tests", "Examp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechDebtAttributes.Tests", "TechDebtAttributes.Tests\TechDebtAttributes.Tests.csproj", "{75918F04-871A-44B6-A291-CA88A43DA2DF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExampleUse", "ExampleUse", "{BFC94489-6B3F-4ADB-8F8A-35F2A4C86887}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F3B4F26F-203B-4045-A435-BFD7B6644C37} = {BFC94489-6B3F-4ADB-8F8A-35F2A4C86887}
+		{62573446-B37F-4E98-BC15-C70FAB4AB72D} = {BFC94489-6B3F-4ADB-8F8A-35F2A4C86887}
 	EndGlobalSection
 EndGlobal
