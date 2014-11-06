@@ -70,3 +70,8 @@ public void ReportOnTechDebtAndFailTestIfTotalPainExceeded()
 }
 ```
 
+## More examples:
+
+https://github.com/jason-roberts/TechDebtAttributes/blob/master/src/TechDebtAttributes/ExampleUsage.Tests/UsingTechDebtAttributesInTests.cs
+
+https://github.com/jason-roberts/TechDebtAttributes/blob/master/src/TechDebtAttributes/TechDebtAttributes.Tests/TechDebtReporterTests.cs
