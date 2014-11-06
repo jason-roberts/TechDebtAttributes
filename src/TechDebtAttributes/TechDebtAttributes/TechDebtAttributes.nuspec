@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Jason Roberts - dontcodetired.com</authors>
+    <owners>Jason Roberts</owners>
+    <licenseUrl>https://github.com/jason-roberts/TechDebtAttributes/blob/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/jason-roberts/TechDebtAttributes</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/jason-roberts/TechDebtAttributes/master/logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Track and classify technical debt at the source code level and report on it.</description>
+    <releaseNotes>Initial Release</releaseNotes>
+    <copyright>Copyright 2014 Jason Roberts</copyright>
+    <tags>TechnicalDebt Quality Testing CleanCode</tags>
+  </metadata>
+</package>
