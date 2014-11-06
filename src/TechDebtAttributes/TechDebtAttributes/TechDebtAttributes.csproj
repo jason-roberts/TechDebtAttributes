@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TechDebtPainExceededException.cs" />
     <Compile Include="Reporter.cs" />
     <Compile Include="TechDebtAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
