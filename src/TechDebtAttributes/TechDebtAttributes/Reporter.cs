@@ -14,23 +14,26 @@ namespace TechDebtAttributes
 
             var reportLines = GenerateReportLines(typesWithTechDebt);
 
-            var sb = new StringBuilder();
+            return RenderReportLinesToTextReport(reportLines);
+        }
 
-            sb.AppendLine("Start of Tech Debt Report - finding all [TechDebt] attribute usages");
+        public static void AssertMaxPainNotExceeded(Assembly assemblyToReportOn, int maxAllowableMain)
+        {
+            var typesWithDebt = FindAllTheTypesThatHaveTechDebt(assemblyToReportOn);
 
-            foreach (var item in reportLines.OrderByDescending(x => x.Attribute.RelativeBenefitToFix))
+            var totalPain = (from t in typesWithDebt
+                             let techDebtAttribute = (TechDebtAttribute)t.GetCustomAttributes(typeof(TechDebtAttribute), inherit: false)[0]
+                             select techDebtAttribute).Sum(x => x.Pain);
+
+            if (totalPain > maxAllowableMain)
             {
-                sb.AppendLine(item.ToString());
+                throw new TechDebtPainExceededException();
             }
-
-            sb.AppendLine("End of Tech Debt Report.");
-
-            return sb.ToString();
         }
 
         private static IEnumerable<MemberInfo> FindTypesWithTechDebt(IEnumerable<Assembly> assemblies)
         {
-            return assemblies.SelectMany(FindAllTheTypesThatHaveTechDebt);           
+            return assemblies.SelectMany(FindAllTheTypesThatHaveTechDebt);
         }
 
         private static IEnumerable<MemberInfo> FindAllTheTypesThatHaveTechDebt(Assembly assembly)
@@ -59,6 +62,26 @@ namespace TechDebtAttributes
             return reportItems;
         }
 
+        private static string RenderReportLinesToTextReport(IEnumerable<ReportLine> reportLines)
+        {
+            var sb = new StringBuilder();
+
+            sb.AppendLine("***Start of Tech Debt Report - finding all [TechDebt] attribute usages");
+
+            sb.AppendLine();
+
+            foreach (var item in reportLines.OrderByDescending(x => x.Attribute.RelativeBenefitToFix))
+            {
+                sb.AppendLine(item.ToString());
+            }
+
+            sb.AppendLine();
+
+            sb.AppendLine("***End of Tech Debt Report.");
+
+            return sb.ToString();
+        }
+
     
 
         private class ReportLine
@@ -71,20 +94,6 @@ namespace TechDebtAttributes
                 return string.Format("Benefit to fix: {0:0.#} {1} {2} Pain:{3} Effort to fix:{4}",
                     Attribute.RelativeBenefitToFix, Attribute.description, TypeOrMemberName, Attribute.Pain,
                     Attribute.EffortToFix);
-            }
-        }
-
-        public static void AssertMaxPainNotExceeded(Assembly assemblyToReportOn, int maxAllowableMain)
-        {
-            var typesWithDebt = FindAllTheTypesThatHaveTechDebt(assemblyToReportOn);
-
-            var totalPain = (from t in typesWithDebt
-                             let techDebtAttribute = (TechDebtAttribute) t.GetCustomAttributes(typeof(TechDebtAttribute), inherit: false)[0]
-                            select techDebtAttribute).Sum(x => x.Pain);
-
-            if (totalPain > maxAllowableMain)
-            {
-                throw new TechDebtPainExceededException();
             }
         }
     }
