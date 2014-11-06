@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{75918F04-871A-44B6-A291-CA88A43DA2DF}</ProjectGuid>
+    <ProjectGuid>{4EBE26A5-588E-428D-BC41-5642C0018A80}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TechDebtAttributes.Tests</RootNamespace>
-    <AssemblyName>TechDebtAttributes.Tests</AssemblyName>
+    <RootNamespace>AnotherExampleUsageAssembly</RootNamespace>
+    <AssemblyName>AnotherExampleUsageAssembly</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,12 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ApprovalTests">
-      <HintPath>..\packages\ApprovalTests.3.0.7\lib\net40\ApprovalTests.dll</HintPath>
-    </Reference>
-    <Reference Include="ApprovalUtilities">
-      <HintPath>..\packages\ApprovalUtilities.3.0.7\lib\net35\ApprovalUtilities.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,36 +37,16 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="xunit">
-      <HintPath>..\packages\xunit.1.9.2\lib\net20\xunit.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TechDebtReporterTests.cs" />
+    <Compile Include="Mango.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AnotherExampleUsageAssembly\AnotherExampleUsageAssembly.csproj">
-      <Project>{4EBE26A5-588E-428D-BC41-5642C0018A80}</Project>
-      <Name>AnotherExampleUsageAssembly</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ExampleUsage\ExampleUsage.csproj">
-      <Project>{F3B4F26F-203B-4045-A435-BFD7B6644C37}</Project>
-      <Name>ExampleUsage</Name>
-    </ProjectReference>
     <ProjectReference Include="..\TechDebtAttributes\TechDebtAttributes.csproj">
-      <Project>{7987be47-0f7a-4fb0-a395-d0536ef6df12}</Project>
+      <Project>{7987BE47-0F7A-4FB0-A395-D0536EF6DF12}</Project>
       <Name>TechDebtAttributes</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="TechDebtReporterTests.ShouldRenderReport.approved.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using AnotherExampleUsageAssembly;
 using ApprovalTests;
 using ApprovalTests.Reporters;
 using ExampleUsage;
@@ -13,6 +14,19 @@ namespace TechDebtAttributes.Tests
         public void ShouldRenderReport()
         {
             var assemblyToReportOn = Assembly.GetAssembly(typeof(SomeThing));
+
+            Approvals.Verify(TechDebtReporter.GenerateReport(assemblyToReportOn));
+        }
+
+        [Fact]
+        [UseReporter(typeof(DiffReporter))]
+        public void ShouldRenderReportWithMultipleAssemblies()
+        {
+            var assemblyToReportOn = new[]
+                                     {
+                                         Assembly.GetAssembly(typeof (SomeThing)),
+                                         Assembly.GetAssembly(typeof (Mango))
+                                     };
 
             Approvals.Verify(TechDebtReporter.GenerateReport(assemblyToReportOn));
         }

@@ -8,9 +8,9 @@ namespace TechDebtAttributes
 {
     public static class TechDebtReporter
     {
-        public static string GenerateReport(Assembly assembly)
+        public static string GenerateReport(params Assembly[] assemblies)
         {
-            var typesWithTechDebt = FindTypesWithTechDebtFor(assembly);
+            var typesWithTechDebt = FindTypesWithTechDebt(assemblies);
 
             var reportLines = GenerateReportLines(typesWithTechDebt);
 
@@ -28,7 +28,20 @@ namespace TechDebtAttributes
             return sb.ToString();
         }
 
-        private static List<ReportLine> GenerateReportLines(IEnumerable<MemberInfo> typesWithTechDebt)
+        private static IEnumerable<MemberInfo> FindTypesWithTechDebt(IEnumerable<Assembly> assemblies)
+        {
+            return assemblies.SelectMany(FindAllTheTypesThatHaveTechDebt);           
+        }
+
+        private static IEnumerable<MemberInfo> FindAllTheTypesThatHaveTechDebt(Assembly assembly)
+        {
+            return assembly.GetTypes()
+                .SelectMany(type => type.GetMembers())
+                .Union(assembly.GetTypes())
+                .Where(type => Attribute.IsDefined(type, typeof(TechDebtAttribute)));
+        }
+
+        private static IEnumerable<ReportLine> GenerateReportLines(IEnumerable<MemberInfo> typesWithTechDebt)
         {
             var reportItems = new List<ReportLine>();
 
@@ -46,13 +59,7 @@ namespace TechDebtAttributes
             return reportItems;
         }
 
-        private static IEnumerable<MemberInfo> FindTypesWithTechDebtFor(Assembly assembly)
-        {
-            return assembly.GetTypes()
-                .SelectMany(type => type.GetMembers())
-                .Union(assembly.GetTypes())
-                .Where(type => Attribute.IsDefined(type, typeof (TechDebtAttribute)));
-        }
+    
 
         private class ReportLine
         {
@@ -69,7 +76,7 @@ namespace TechDebtAttributes
 
         public static void AssertMaxPainNotExceeded(Assembly assemblyToReportOn, int maxAllowableMain)
         {
-            var typesWithDebt = FindTypesWithTechDebtFor(assemblyToReportOn);
+            var typesWithDebt = FindAllTheTypesThatHaveTechDebt(assemblyToReportOn);
 
             var totalPain = (from t in typesWithDebt
                              let techDebtAttribute = (TechDebtAttribute) t.GetCustomAttributes(typeof(TechDebtAttribute), inherit: false)[0]
