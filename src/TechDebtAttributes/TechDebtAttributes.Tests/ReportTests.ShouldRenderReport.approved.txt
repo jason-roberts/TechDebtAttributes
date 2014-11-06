@@ -2,6 +2,8 @@
 Benefit to fix: 1666.7  Void .ctor() Pain:5000 Effort to fix:3
 Benefit to fix: 5 Quick fix to stop stupid stuff happening sometimes Void SomeMethod() Pain:5 Effort to fix:1
 Benefit to fix: 2  ExampleUsage.SillyEnum Tomato Pain:47 Effort to fix:23
+Benefit to fix: 0.5 What kind of cheese is this? ExampleUsage.Cheese Pain:3 Effort to fix:6
+Benefit to fix: 0.4 What exactly is inner cheese ExampleUsage.Cheese+InnerCheese Pain:3 Effort to fix:8
 Benefit to fix: 0.3 This really is silly ExampleUsage.SillyEnum Pain:2 Effort to fix:6
 Benefit to fix: 0.2 This is dumb, we should remove it ExampleUsage.ISomeDumbInterface Pain:10 Effort to fix:44
 Benefit to fix: 0.1 This should be moved to it's own interface Void Y() Pain:10 Effort to fix:100

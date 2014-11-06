@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cheese.cs" />
     <Compile Include="ISomeDumbInterface.cs" />
     <Compile Include="ISomeExampleInterface.cs" />
     <Compile Include="SillyEnum.cs" />
