@@ -16,6 +16,10 @@ public interface ISomeDumbInterface
 }
 ```
 
+In the example above, this debt has a pain value of 10 and an effort to fix of 44.
+
+You decide what the relative values mean for these ints.
+
 ## Step 2 Report
 
 Install NuGet Package: TechDebtAttributes into your test project
