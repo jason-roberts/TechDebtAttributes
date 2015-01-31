@@ -40,6 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EffortToFix.cs" />
+    <Compile Include="LegoPain.cs" />
+    <Compile Include="Pain.cs" />
     <Compile Include="TechDebtPainExceededException.cs" />
     <Compile Include="Reporter.cs" />
     <Compile Include="TechDebtAttribute.cs" />
