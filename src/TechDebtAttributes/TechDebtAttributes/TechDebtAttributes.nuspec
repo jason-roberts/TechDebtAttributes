@@ -15,8 +15,4 @@
         <copyright>Copyright 2014 Jason Roberts</copyright>
         <tags>TechnicalDebt Quality Testing CleanCode</tags>
     </metadata>
-    <files>
-        <file src="bin\**\*.xml" target="lib\net35" />
-        <file src="bin\**\*.pdb" target="lib\net35" />
-    </files>
 </package>
