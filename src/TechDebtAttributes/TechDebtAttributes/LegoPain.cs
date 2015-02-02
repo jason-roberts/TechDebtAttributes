@@ -28,6 +28,6 @@
         /// <summary>
         /// 5
         /// </summary>
-        public const int DeatchEmitent = Pain._5;
+        public const int DeathImminent = Pain._5;
     }
 }
