@@ -7,9 +7,9 @@ Add attributes to your production code where you find technical debt that you ca
 Install NuGet Package: TechDebtAttributes into your production assembly(s)
 
 
-Use [TechDebt] attributes to when you find technical debt that you can't fix right away:
+Use `[TechDebt]` attributes to when you find technical debt that you can't fix right away:
 
-```
+```csharp
 [TechDebt(10, 44, description = "This is dumb, we should remove it")]
 public interface ISomeDumbInterface
 {     
@@ -26,7 +26,7 @@ Install NuGet Package: TechDebtAttributes into your test project
 
 Add a test in your test project to output a report of all tech debt:
 
-```
+```csharp
 public class WhatsTheTechDebt
 {
 	[Fact]
@@ -57,7 +57,7 @@ End of Tech Debt Report.
 
 ## Step 3: Fail tests if too much tech debt exists (optional)
 
-```
+```csharp
 // This test will fail because there is more than total of 10 pain in all tech debt
 [Fact]
 public void ReportOnTechDebtAndFailTestIfTotalPainExceeded()
