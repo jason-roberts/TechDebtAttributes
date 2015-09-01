@@ -20,11 +20,12 @@ namespace TechDebtAttributes
 
         public double RelativeBenefitToFix
         {
-            get { return (double) Pain / EffortToFix; }
+            get { return (double)Pain / EffortToFix; }
         }
 
         // ReSharper disable InconsistentNaming
         public string description = "";
+
         // ReSharper restore InconsistentNaming
 
         public int Pain

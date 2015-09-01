@@ -51,7 +51,7 @@ namespace TechDebtAttributes
             foreach (var type in typesWithTechDebt)
             {
                 var techDebtAttribute =
-                    (TechDebtAttribute) type.GetCustomAttributes(typeof (TechDebtAttribute), inherit: false)[0];
+                    (TechDebtAttribute)type.GetCustomAttributes(typeof(TechDebtAttribute), inherit: false)[0];
 
                 reportItems.Add(new ReportLine
                                 {
@@ -82,12 +82,11 @@ namespace TechDebtAttributes
             return sb.ToString();
         }
 
-    
-
         private class ReportLine
         {
             public string TypeOrMemberName { get; set; }
-            public TechDebtAttribute Attribute {get; set; }
+
+            public TechDebtAttribute Attribute { get; set; }
 
             public override string ToString()
             {
