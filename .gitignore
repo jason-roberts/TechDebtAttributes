@@ -182,4 +182,7 @@ UpgradeLog*.htm
 # Microsoft Fakes
 FakesAssemblies/
 
+# VS related
+.vs/
+
 *.received.txt
