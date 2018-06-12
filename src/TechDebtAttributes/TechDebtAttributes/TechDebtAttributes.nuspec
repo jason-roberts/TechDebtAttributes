@@ -11,8 +11,8 @@
     <iconUrl>https://raw.githubusercontent.com/jason-roberts/TechDebtAttributes/master/logo.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Track and classify technical debt at the source code level and report on it.</description>
-    <releaseNotes>Initial Release</releaseNotes>
-    <copyright>Copyright 2014 Jason Roberts</copyright>
+    <releaseNotes>Cleanup for v2</releaseNotes>
+    <copyright>Copyright 2014-2018 Jason Roberts</copyright>
     <tags>TechnicalDebt Quality Testing CleanCode</tags>
   </metadata>
 </package>

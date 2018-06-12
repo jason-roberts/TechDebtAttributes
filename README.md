@@ -10,7 +10,7 @@ Install NuGet Package: TechDebtAttributes into your production assembly(s)
 Use `[TechDebt]` attributes to when you find technical debt that you can't fix right away:
 
 ```csharp
-[TechDebt(10, 44, description = "This is dumb, we should remove it")]
+[TechDebt(10, 44, Description = "This is dumb, we should remove it")]
 public interface ISomeDumbInterface
 {     
 }

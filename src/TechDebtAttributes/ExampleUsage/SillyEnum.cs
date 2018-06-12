@@ -2,7 +2,7 @@
 
 namespace ExampleUsage
 {
-    [TechDebt(2,6, description = "This really is silly")]
+    [TechDebt(2,6, Description = "This really is silly")]
     public enum SillyEnum
     {
         Alpha,

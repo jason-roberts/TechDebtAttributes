@@ -2,39 +2,19 @@
 
 namespace TechDebtAttributes
 {
-    [AttributeUsage(
-        AttributeTargets.Class | AttributeTargets.Constructor | AttributeTargets.Delegate | AttributeTargets.Enum |
-        AttributeTargets.Event | AttributeTargets.Field | AttributeTargets.GenericParameter | AttributeTargets.Interface |
-        AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Struct,
-        AllowMultiple = false)]
+    [AttributeUsage(AttributeTargets.All, AllowMultiple = false)]
     public class TechDebtAttribute : Attribute
     {
-        private readonly int _effortToFix;
-        private readonly int _pain;
-
         public TechDebtAttribute(int pain, int effortToFix)
         {
-            _pain = pain;
-            _effortToFix = effortToFix;
+            Pain = pain;
+            EffortToFix = effortToFix;
         }
 
-        public double RelativeBenefitToFix
-        {
-            get { return (double) Pain / EffortToFix; }
-        }
+        public double RelativeBenefitToFix => (double)Pain / EffortToFix;       
 
-        // ReSharper disable InconsistentNaming
-        public string description = "";
-        // ReSharper restore InconsistentNaming
-
-        public int Pain
-        {
-            get { return _pain; }
-        }
-
-        public int EffortToFix
-        {
-            get { return _effortToFix; }
-        }
+        public int Pain { get; }
+        public int EffortToFix { get; }
+        public string Description { get; set; }
     }
 }

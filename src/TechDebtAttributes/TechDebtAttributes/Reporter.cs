@@ -92,7 +92,7 @@ namespace TechDebtAttributes
             public override string ToString()
             {
                 return string.Format("Benefit to fix: {0:0.#} {1} {2} Pain:{3} Effort to fix:{4}",
-                    Attribute.RelativeBenefitToFix, Attribute.description, TypeOrMemberName, Attribute.Pain,
+                    Attribute.RelativeBenefitToFix, Attribute.Description, TypeOrMemberName, Attribute.Pain,
                     Attribute.EffortToFix);
             }
         }
