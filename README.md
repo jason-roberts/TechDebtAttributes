@@ -55,18 +55,16 @@ Benefit to fix: 0 There's a lot of work to fix this whole class for not much gai
 End of Tech Debt Report.
 ```
 
-## Step 3: Fail tests if too much tech debt exists (optional)
+## Step 3: Throws if too much tech debt exists (optional)
 
 ```csharp
-// This test will fail because there is more than total of 10 pain in all tech debt
 [Fact]
-public void ReportOnTechDebtAndFailTestIfTotalPainExceeded()
+public void ShouldThrowExceptionWhenPainLimitExceeded()
 {
-	var assemblyContainingTechDebt = Assembly.GetAssembly(typeof(SomeThing));
+	var assemblyToReportOn = Assembly.GetAssembly(typeof(SomeThing));
 
-	const int maximumPainInCodebaseThatWereWillingToLiveWith = 10;
-
-	TechDebtReporter.AssertMaxPainNotExceeded(assemblyContainingTechDebt, maximumPainInCodebaseThatWereWillingToLiveWith);            
+	Assert.Throws<TechDebtPainExceededException>(() => TechDebtReporter.AssertMaxPainNotExceeded(assemblyToReportOn, 1));
+}
 }
 ```
 
