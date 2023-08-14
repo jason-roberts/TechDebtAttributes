@@ -1,13 +1,12 @@
 ﻿using TechDebtAttributes;
 
-namespace ExampleUsage
+namespace ExampleUsage;
+
+public class SomeThingWithDumbConstructor
 {
-    public class SomeThingWithDumbConstructor
+    [TechDebt(5000, 3)]
+    public SomeThingWithDumbConstructor()
     {
-        [TechDebt(5000, 3)]
-        public SomeThingWithDumbConstructor()
-        {
-            
-        }
+
     }
 }

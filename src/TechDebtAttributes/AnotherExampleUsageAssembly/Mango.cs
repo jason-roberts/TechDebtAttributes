@@ -1,9 +1,8 @@
 ﻿using TechDebtAttributes;
 
-namespace AnotherExampleUsageAssembly
+namespace AnotherExampleUsageAssembly;
+
+[TechDebt(9999,2)]
+public class Mango
 {
-    [TechDebt(9999,2)]
-    public class Mango
-    {
-    }
 }

@@ -1,19 +1,19 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechDebtAttributes", "TechDebtAttributes\TechDebtAttributes.csproj", "{7987BE47-0F7A-4FB0-A395-D0536EF6DF12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechDebtAttributes", "TechDebtAttributes\TechDebtAttributes.csproj", "{7987BE47-0F7A-4FB0-A395-D0536EF6DF12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleUsage", "ExampleUsage\ExampleUsage.csproj", "{F3B4F26F-203B-4045-A435-BFD7B6644C37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExampleUsage", "ExampleUsage\ExampleUsage.csproj", "{F3B4F26F-203B-4045-A435-BFD7B6644C37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleUsage.Tests", "ExampleUsage.Tests\ExampleUsage.Tests.csproj", "{62573446-B37F-4E98-BC15-C70FAB4AB72D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExampleUsage.Tests", "ExampleUsage.Tests\ExampleUsage.Tests.csproj", "{62573446-B37F-4E98-BC15-C70FAB4AB72D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechDebtAttributes.Tests", "TechDebtAttributes.Tests\TechDebtAttributes.Tests.csproj", "{75918F04-871A-44B6-A291-CA88A43DA2DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechDebtAttributes.Tests", "TechDebtAttributes.Tests\TechDebtAttributes.Tests.csproj", "{75918F04-871A-44B6-A291-CA88A43DA2DF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExampleUse", "ExampleUse", "{BFC94489-6B3F-4ADB-8F8A-35F2A4C86887}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnotherExampleUsageAssembly", "AnotherExampleUsageAssembly\AnotherExampleUsageAssembly.csproj", "{4EBE26A5-588E-428D-BC41-5642C0018A80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnotherExampleUsageAssembly", "AnotherExampleUsageAssembly\AnotherExampleUsageAssembly.csproj", "{4EBE26A5-588E-428D-BC41-5642C0018A80}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

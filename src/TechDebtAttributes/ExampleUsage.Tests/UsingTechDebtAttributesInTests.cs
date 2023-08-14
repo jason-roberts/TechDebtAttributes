@@ -1,32 +1,38 @@
-﻿using System;
-using System.Reflection;
+﻿using System.Reflection;
 using TechDebtAttributes;
 using Xunit;
+using Xunit.Abstractions;
 
-namespace ExampleUsage.Tests
+namespace ExampleUsage.Tests;
+
+public class UsingTechDebtAttributesInTests
 {
-    public class UsingTechDebtAttributesInTests
+    private readonly ITestOutputHelper _testOutputHelper;
+
+    public UsingTechDebtAttributesInTests(ITestOutputHelper testOutputHelper)
     {
-        [Fact]
-        public void ReportOnTechDebtButNeverFailATest()
-        {
-            var assemblyContainingTechDebt = Assembly.GetAssembly(typeof (SomeThing));
+        _testOutputHelper = testOutputHelper;
+    }
 
-            var report = TechDebtReporter.GenerateReport(assemblyContainingTechDebt);
+    [Fact]
+    public void ReportOnTechDebtButNeverFailATest()
+    {
+        var assemblyContainingTechDebt = Assembly.GetAssembly(typeof (SomeThing));
 
-            Console.WriteLine(report);
-        }
+        var report = TechDebtReporter.GenerateReport(assemblyContainingTechDebt);
+
+        _testOutputHelper.WriteLine(report);
+    }
 
 
-        // This test will fail because there is more than total of 10 pain in tech debt
-        [Fact]
-        public void ReportOnTechDebtAndFailTestIfTotalPainExceeded()
-        {
-            var assemblyContainingTechDebt = Assembly.GetAssembly(typeof(SomeThing));
+    [Fact]
+    public void ReportOnTechDebtAndThrowIfTotalPainExceeded()
+    {
+        var assemblyContainingTechDebt = Assembly.GetAssembly(typeof(SomeThing));
 
-            const int maximumPainInCodebaseThatWereWillingToLiveWith = 10;
+        const int maximumPainInCodebaseThatWereWillingToLiveWith = 10;
 
-            TechDebtReporter.AssertMaxPainNotExceeded(assemblyContainingTechDebt, maximumPainInCodebaseThatWereWillingToLiveWith);            
-        }
+        Assert.Throws<TechDebtPainExceededException>(() => TechDebtReporter.AssertMaxPainNotExceeded(assemblyContainingTechDebt, maximumPainInCodebaseThatWereWillingToLiveWith));
+        // TechDebtReporter.AssertMaxPainNotExceeded(assemblyContainingTechDebt, maximumPainInCodebaseThatWereWillingToLiveWith);
     }
 }

@@ -1,9 +1,8 @@
 ﻿using TechDebtAttributes;
 
-namespace ExampleUsage
+namespace ExampleUsage;
+
+[TechDebt(10, 44, Description = "This is dumb, we should remove it")]
+public interface ISomeDumbInterface
 {
-    [TechDebt(10, 44, Description = "This is dumb, we should remove it")]
-    public interface ISomeDumbInterface
-    {     
-    }
 }
